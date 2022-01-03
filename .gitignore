@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 /bin/
+.classpath
+.gitignore
+.project
 =======
 # Compiled class file
 *.class
