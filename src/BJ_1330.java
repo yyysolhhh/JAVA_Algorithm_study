@@ -32,7 +32,11 @@ public class BJ_1330 {
 		// 3
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str3 = br.readLine();
-		StringTokenizer st = new StringTokenizer(str, " ");
+		StringTokenizer st = new StringTokenizer(str3, " ");
+		int A = Integer.parseInt(st.nextToken());
+		int B = Integer.parseInt(st.nextToken());
+		System.out.println((A > B) ? ">" : ((A < B) ? "<" : "=="));
+		
 		
 	}
 
