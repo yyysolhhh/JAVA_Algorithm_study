@@ -37,6 +37,12 @@ public class BJ_1330 {
 		int B = Integer.parseInt(st.nextToken());
 		System.out.println((A > B) ? ">" : ((A < B) ? "<" : "=="));
 		
+		// 4
+		BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+		String[] str4 = br2.readLine().split(" ");
+		int a = Integer.parseInt(str4[0]);
+		int b = Integer.parseInt(str4[1]);
+		System.out.println((a > b) ? ">" : ((a < b) ? "<" : "=="));
 		
 	}
 
