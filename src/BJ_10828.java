@@ -43,7 +43,7 @@ public class BJ_10828 {
 //			}
 //		}
 		
-		// 2 swich 문
+		// 2 switch 문
 		for (int i = 0; i < N; i++) {
 			String[] command2 = br.readLine().split(" ");
 			
