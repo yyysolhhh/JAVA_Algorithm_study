@@ -22,7 +22,7 @@ public class BJ_2606 {
 		
 		dfs(1);
 		System.out.println(res);
-		
+		sc.close();
 		
 	}
 	
