@@ -3,7 +3,6 @@ import java.util.StringTokenizer;
 
 public class BJ_1074 {
     static int N, r, c;
-    static int[][] map;
     static int order;
     static int size;
 
@@ -18,31 +17,36 @@ public class BJ_1074 {
 
         size = (int) Math.pow(2, N);
         order = 0;
-        map = new int[size][size];
-        search(0, r, c, size);
 
-        bw.write(map[r][c]);
+        search(r, c, size);
+        bw.write(order);
         bw.flush();
         bw.close();
     }
 
-    static void search(int order, int r, int c, int size) {
+    static void search(int r, int c, int size) {
+        System.out.println(size);
+        System.out.println(order);
+        if (size == 1)
+            return ;
         // 1사분면
         if (r < size / 2 && c < size / 2) {
-
+            search(r, c, size / 2);
         }
         // 2사분면
         else if (r < size / 2 && c >= size / 2) {
-
+            order += size * size / 4;
+            search(r, c + size / 2, size / 2);
         }
         // 3사분면
         else if (r >= size / 2 && c < size / 2) {
-
+            order += size * size / 4 + 1;
+            search(r + size / 2, c, size / 2);
         }
         // 4사분면
         else {
-            
+            order += size * size / 4 + 2;
+            search(r + size / 2, c + size / 2, size / 2);
         }
-        order++;
     }
 }
