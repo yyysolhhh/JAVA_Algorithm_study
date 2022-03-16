@@ -21,30 +21,29 @@ public class BJ_2630 {
             }
         }
 
-        cutPaper(N, N / 2, N / 2);
+        cutPaper(N, 0, 0);
         System.out.println(white);
         System.out.println(blue);
     }
 
     static void cutPaper(int size, int row, int col) {
-        if (size == 1)
-            return ;
         int sum = 0;
         for (int i = row; i < row + size; i++) {
             for (int j = col; j < col + size; j++) {
                 sum += paper[i][j];
             }
         }
-        if (sum == size * size || sum == 0) {
-            if (sum == size * size)
-                blue += 1;
-            else if (sum == 0)
-                white += 1;
-        } else {
+        if (sum == size * size)
+            blue += 1;
+        else if (sum == 0)
+            white += 1;
+        else {
             cutPaper(size / 2, row, col);
-            cutPaper(size / 2, row / 2, col);
-            cutPaper(size / 2, row, col / 2);
-            cutPaper(size / 2, row / 2, col / 2);
+            cutPaper(size / 2, row + size / 2, col);
+            cutPaper(size / 2, row, col + size / 2);
+            cutPaper(size / 2, row + size / 2, col + size / 2);
         }
+        if (size == 1)
+            return ;
     }
 }
