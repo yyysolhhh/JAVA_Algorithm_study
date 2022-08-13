@@ -76,7 +76,8 @@ public class BJ_13460 {
 			if (r_marble.y == holeY && r_marble.x == holeX && b_marble.y != holeY && b_marble.x != holeX)
 				return (r_marble.cnt);
 			for (int i = 0; i < 4; i++) {
-				ny = 
+				int ny = r_marble.y + dy[i];
+				int nx = r_marble.x + dx[i];
 			}
 		}
 
