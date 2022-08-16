@@ -73,11 +73,25 @@ public class BJ_13460 {
 			Marble r_marble = redQ.poll();
 			Marble b_marble = blueQ.poll();
 			
+			if (r_marble.cnt > 10) {
+				return (-1);
+			}
+			
+			if (board[b_marble.y][b_marble.x] == 'O') {
+				continue;
+			} else if (board[r_marble.y][r_marble.x] == 'O') {
+				return (r_marble.cnt);
+			}
+			
 			if (r_marble.y == holeY && r_marble.x == holeX && b_marble.y != holeY && b_marble.x != holeX)
 				return (r_marble.cnt);
 			for (int i = 0; i < 4; i++) {
-				int ny = r_marble.y + dy[i];
-				int nx = r_marble.x + dx[i];
+				int r_ny = r_marble.y + dy[i];
+				int r_nx = r_marble.x + dx[i];
+				
+				
+				int b_ny = b_marble.y + dy[i];
+				int b_nx = b_marble.x + dx[i];
 			}
 		}
 
