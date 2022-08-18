@@ -83,17 +83,41 @@ public class BJ_13460 {
 				return (r_marble.cnt);
 			}
 			
-			if (r_marble.y == holeY && r_marble.x == holeX && b_marble.y != holeY && b_marble.x != holeX)
-				return (r_marble.cnt);
+//			if (r_marble.y == holeY && r_marble.x == holeX && b_marble.y != holeY && b_marble.x != holeX)
+//				return (r_marble.cnt);
+			
 			for (int i = 0; i < 4; i++) {
-				int r_ny = r_marble.y + dy[i];
-				int r_nx = r_marble.x + dx[i];
-				
+				int r_ny = r_marble.y;
+				int r_nx = r_marble.x;
+				while (true) {
+					r_ny += dy[i];
+					r_nx += dx[i];
+					if (board[r_ny][r_nx] == 'O')
+						break;
+					else if (board[r_ny][r_nx] == '#') {
+						r_ny -= dy[i];
+						r_nx -= dx[i];
+					}
+				}
 				
 				int b_ny = b_marble.y + dy[i];
 				int b_nx = b_marble.x + dx[i];
+				while (true) {
+					b_ny += dy[i];
+					b_nx += dx[i];
+					if (board[b_ny][b_nx] == 'O')
+						break;
+					else if (board[b_ny][b_nx] == '#') {
+						b_ny -= dy[i];
+						b_nx -= dx[i];
+					}
+				}
+				
+				if (r_ny == b_ny && r_nx == b_nx && board[r_ny][r_nx] != 'O') {
+					
+				}
 			}
-		}
+		} 
 
 	}
 }
