@@ -114,7 +114,17 @@ public class BJ_13460 {
 				}
 				
 				if (r_ny == b_ny && r_nx == b_nx && board[r_ny][r_nx] != 'O') {
+					int r_dis = Math.abs(r_ny - r_marble.y) + Math.abs(r_nx - r_marble.x);
+					int b_dis = Math.abs(b_ny - b_marble.y) + Math.abs(b_nx - b_marble.x);
 					
+					if (r_dis > b_dis) {
+						r_ny -= dy[i];
+						r_nx -= dx[i];
+					} else {
+						b_ny -= dy[i];
+						b_nx -= dx[i];
+					}
+
 				}
 			}
 		} 
