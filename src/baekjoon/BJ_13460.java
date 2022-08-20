@@ -124,10 +124,12 @@ public class BJ_13460 {
 						b_ny -= dy[i];
 						b_nx -= dx[i];
 					}
-
 				}
+				
+				redQ.offer(new Marble(r_ny, r_nx, r_marble.cnt + 1));
+				blueQ.offer(new Marble(r_ny, b_nx, b_marble.cnt + 1));
 			}
 		} 
-
+		return (-1);
 	}
 }
